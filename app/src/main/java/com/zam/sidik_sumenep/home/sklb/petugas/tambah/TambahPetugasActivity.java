@@ -301,7 +301,7 @@ public class TambahPetugasActivity extends BaseLogedinActivity
                             .setMessage(response.message)
                             .setPositiveButton("Yes", (dialog, which) -> {
                                 PetugasSource.getInstance().setPetugasUpdated(true);
-                                onBackPressed();
+                                getOnBackPressedDispatcher().onBackPressed();
                             })
                             //.setNegativeButton("Tambah Baru", null)
                             .show();

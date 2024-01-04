@@ -26,6 +26,7 @@ import com.zam.sidik_sumenep.databinding.FragmentSklbPetugasUmumBinding;
 import com.zam.sidik_sumenep.home.sklb.SklbBaseFragment;
 import com.zam.sidik_sumenep.home.sklb.petugas.tambah.TambahPetugasActivity;
 import com.zam.sidik_sumenep.home.sklb.petugas.vm.PeternakUmum;
+import com.zam.sidik_sumenep.home.sklb.petugas.vm.PetugasSource;
 import com.zam.sidik_sumenep.home.sklb.petugas.vm.PetugasViewModel;
 import com.zam.sidik_sumenep.util.Util;
 
@@ -135,6 +136,18 @@ public class UmumFragment extends SklbBaseFragment implements PetugasCallback {
 
         layoutMsg.setVisibility(View.VISIBLE);
         tvError.setText(message);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (PetugasSource.getInstance().isPetugasUpdated()) {
+            PetugasSource.getInstance().setPetugasUpdated(false);
+            Map<String, String> params = new HashMap<>();
+            params.put("aksi", "4");
+            params.put("userid", user.userid);
+            petugasViewModel.requestPetugas(params);
+        }
     }
 
     @Override

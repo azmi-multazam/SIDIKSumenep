@@ -45,7 +45,8 @@ public class Config {
             URL_HITUNG_TERNAK = BASE_PADANG + "hitung_ternak.php",
             URL_BERITA = BASE_PADANG + "berita.php",
             URL_PEMILIK = BASE_PADANG + "pemilik_ternak.php",
-            URL_PETUGAS = BASE_PADANG + "add_pamekasan.php",
+            URL_PETUGAS = BASE_PADANG + "pemilik_ternak.php",
+            URL_PETUGAS_OLEH_DINAS = BASE_PADANG + "add_pamekasan.php",
             URL_SERTIFIKAT = BASE_PADANG + "sertifikat.php",
             URL_SERTIFIKAT_SKLB = BASE_PADANG + "sertifikat_sklb.php",
             URL_SETTING_SKLB = BASE_PADANG + "setingsklb.php";
