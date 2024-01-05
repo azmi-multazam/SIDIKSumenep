@@ -2,6 +2,7 @@ package com.zam.sidik_sumenep.home.sklb.petugas;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +69,7 @@ public class PetugasFragment extends SklbBaseFragment {
 
     @Override
     public void onResume() {
+        Log.d("PetugasFragment", "onResume");
         super.onResume();
         if (PetugasSource.getInstance().isPetugasUpdated()) {
             PetugasSource.getInstance().setPetugasUpdated(false);

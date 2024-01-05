@@ -3,6 +3,7 @@ package com.zam.sidik_sumenep.home.sklb.petugas.pemilikternak;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AlertDialog;
@@ -79,8 +80,10 @@ public class TambahPemilikTernakActivity extends BaseLogedinActivity {
                             //.setTitle("")
                             .setMessage(response.message)
                             .setPositiveButton("Yes", (dialog, which) -> {
+                                Log.d("Dialog", "onOK");
                                 PetugasSource.getInstance().setPemilikUpdated(true);
-                                onBackPressed();
+                                PetugasSource.getInstance().setPetugasUpdated(true);
+                                getOnBackPressedDispatcher().onBackPressed();
                             })
                             //.setNegativeButton("Tambah Baru", null)
                             .show();
